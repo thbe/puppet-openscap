@@ -1,0 +1,7 @@
+
+#oscap-scan command line options:
+OPTIONS="-q xccdf eval
+         --profile <%= scope.lookupvar('openscap::profile') %>
+         --report <%= scope.lookupvar('openscap::report') %>
+         --results <%= scope.lookupvar('openscap::result') %>
+         <%= scope.lookupvar('openscap::xccdfDefinition') %>"

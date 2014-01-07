@@ -1,0 +1,26 @@
+#! /bin/sh
+#
+# Daily cron job for openscap
+#
+
+OPTIONS="oval eval --report <%= scope.lookupvar('openscap::report') %>
+                   --results <%= scope.lookupvar('openscap::result') %>
+                   <%= scope.lookupvar('openscap::ovalDefinition') %>"
+PROG="/usr/bin/oscap"
+
+if [ x"$OPTIONS" == "x" ]
+then
+    logger "OpenSCAP security scan: NOT CONFIGURED. (Cron job)"
+    exit 0
+fi
+
+$PROG $OPTIONS >/dev/null 2>&1
+RETVAL=$?
+if [ $RETVAL -eq 0 ] ; then
+    logger "OpenSCAP security scan: PASS. (Cron job)"
+elif [ $RETVAL -eq 1 ] ; then
+    logger "OpenSCAP security scan: ERROR. (Cron job)"
+else
+    logger "OpenSCAP security scan: FAILED. (Cron job)"
+fi
+exit "$RETVAL"

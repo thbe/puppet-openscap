@@ -1,0 +1,3 @@
+Please download the current oscap file to this directory using:
+
+wget http://www.redhat.com/security/data/oval/com.redhat.rhsa-all.xml
