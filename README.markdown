@@ -1,13 +1,13 @@
-#ssmtp
+#openscap
 
 ####Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with ssmtp](#setup)
-    * [What ssmtp affects](#what-ssmtp-affects)
+3. [Setup - The basics of getting started with openscap](#setup)
+    * [What openscap affects](#what-openscap-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with ssmtp](#beginning-with-ssmtp)
+    * [Beginning with openscap](#beginning-with-openscap)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -16,86 +16,82 @@
 
 ##Overview
 
-The ssmtp module provides the installation procedure for SSMTP including the setup of
-the alternate system if not overwritten by class parameter.
+The openscap module provides the installation procedure for openscap.
 
 ##Module Description
 
-The SSMTP module prelace the standard mail server configuration with a light
-wight sending only server. The behavior is the same as sendmail but without
-the possibility to recieve mails from external systems.
+The openscap module scan the local installation for known vulnerabilities and
+report them in a HTML page.
 
 
 ##Setup
 
-###What ssmtp affects
+###What openscap affects
 
-* ssmtp package.
-* ssmtp configuration file.
-* ssmtp alternative service configuration.
+* openscap package.
+* openscap configuration file.
+* openscap service configuration.
 
-###Beginning with ssmtp
+###Beginning with openscap
 
-include '::ssmtp' is enough to get you up and running if the parameters point to
+include '::openscap' is enough to get you up and running if the parameters point to
 proper values.  If you wish to pass in parameters like which servers to use then you
 can use:
 
 ```puppet
-class { '::ssmtp':
-  mailHub => 'mail.example.local',
+class { '::openscap':
+  rootEmail => 'john.doe@example.local',
 }
 ```
 
 ##Usage
 
-All interaction with the ssmtp module can do be done through the main ssmtp class.
-This means you can simply toggle the options in the ssmtp class to get at the full
+All interaction with the openscap module can do be done through the main openscap class.
+This means you can simply toggle the options in the openscap class to get at the full
 functionality.
 
-###I just want SSMTP, what's the minimum I need?
+###I just want openscap, what's the minimum I need?
 
 ```puppet
-include '::ssmtp'
+include '::openscap'
 ```
-
-###I just want to route all mails to central mail gateway, nothing else.
-
-```puppet
-class { '::ssmtp':
-  mailHub => 'mail.example.local',
-  rootEmail => 'john.doe@example.local',
-}
-```
-
 
 ##Reference
 
 ###Classes
 
-* ssmtp: Main class, includes all the rest.
-* ssmtp::install: Handles the packages.
-* ssmtp::config: Handles the configuration file.
-* ssmtp::service: Handles the alternative service link.
+* openscap: Main class, includes all the rest.
+* openscap::install: Handles the packages.
+* openscap::config: Handles the configuration file.
+* openscap::service: Handles the alternative service link.
 
 ###Parameters
 
-The following parameters are available in the ssmtp module
+The following parameters are available in the openscap module
 
-####`defaultMta`
+####`report`
 
-Replace the default MTA with ssmtp if set to ssmtp.
+Placeholder ...
+
+####`result`
+
+Placeholder ...
+
+####`ovalDefinition`
+
+Placeholder ...
+
+####`xccdfDefinition`
+
+Placeholder ...
+
+####`profile`
+
+Placeholder ...
 
 ####`rootEmail`
 
-Specify which Email address should recieve all mails from root.
-
-####`mailHub`
-
-Define the mail server which should deliver all mails.
-
-####`revaliases`
-
-Array to define the reverse aliases.
+Placeholder ...
 
 
 ##Limitations
