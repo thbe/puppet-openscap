@@ -21,18 +21,15 @@ class openscap (
   $ovalDefinition  = $openscap::params::ovalDefinition,
   $xccdfDefinition = $openscap::params::xccdfDefinition,
   $profile         = $openscap::params::profile,
-  $rootEmail       = $openscap::params::rootEmail
-) {
-  # Include Puppetlabs standard library
-  include stdlib
-  include openscap::params
-
+  $rootEmail       = $openscap::params::rootEmail) inherits openscap::params {
   # Start workflow
   if $openscap::params::linux {
-    anchor { 'openscap::start': }
-    -> class { 'openscap::package': }
-    ~> class { 'openscap::config': }
-    ~> class { 'openscap::service': }
-    ~> anchor { 'openscap::end': }
+    contain openscap::package
+    contain openscap::config
+    contain openscap::service
+
+    Class['openscap::package'] ->
+    Class['openscap::config'] ->
+    Class['openscap::service']
   }
 }
