@@ -22,6 +22,9 @@ class openscap (
   $xccdfDefinition = $openscap::params::xccdfDefinition,
   $profile         = $openscap::params::profile,
   $rootEmail       = $openscap::params::rootEmail) inherits openscap::params {
+  # Require class yum to have the relevant repositories in place
+  require yum
+
   # Start workflow
   if $openscap::params::linux {
     contain openscap::package
