@@ -1,0 +1,35 @@
+{
+  "author": "Thomas Bendler \u003cproject@bendler-net.de\u003e",
+  "checksums": {
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests/package.pp": "6470f648bbdb626212ea849c0edbb883",
+    "manifests/service.pp": "d702ea994efd03d1f6f2c3d97621fe0b",
+    "templates/etc/cron.daily/oscap-scan.sh.erb": "cc5f731186700e32784a4b0da1153c87",
+    "files/NOTICE": "23cb9b40267d0af6e8f38b6dbd645d11",
+    "Modulefile": "8aac9bf194d1d4eee92d99737cbe89d1",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "tests/init.pp": "088750d66c09189b185f476f91195df7",
+    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "README.markdown": "27c9e90ec8604e3fae1d58756962a270",
+    "LICENSE": "0e118ca5f3fa18e200a0f493ad21a18e",
+    "manifests/params.pp": "49d7cedf42329665ef4aa5c124811929",
+    "manifests/init.pp": "faaf8a0e767b801c87b0db6b3614ae5a",
+    "templates/etc/sysconfig/oscap-scan.erb": "b12c758a0c7bf4fa36cffa1ae0c71258",
+    "manifests/config.pp": "9857ae4ed8f96cb0660b3106fdeff000",
+    "CHANGELOG": "f9681bddd8d9c299ba498f3c0dd7c80d"
+  },
+  "dependencies": [
+    {
+      "name": "thbe/yum",
+      "version_requirement": "\u003e\u003d0.3.1"
+    }
+  ],
+  "description": "Openscap management module",
+  "license": "GPLv3",
+  "name": "thbe-openscap",
+  "project_page": "https://github.com/thbe/puppet-openscap.git",
+  "source": "https://github.com/thbe/puppet-openscap.git",
+  "summary": "Openscap management module",
+  "types": [],
+  "version": "0.1.1"
+}
