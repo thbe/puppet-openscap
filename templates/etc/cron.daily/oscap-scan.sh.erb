@@ -3,9 +3,9 @@
 # Daily cron job for openscap
 #
 
-OPTIONS="oval eval --report <%= scope.lookupvar('openscap::report') %>
-                   --results <%= scope.lookupvar('openscap::result') %>
-                   <%= scope.lookupvar('openscap::ovalDefinition') %>"
+OPTIONS="oval eval --report <%= @report %>
+                   --results <%= @result %>
+                   <%= @ovalDefinition %>"
 PROG="/usr/bin/oscap"
 
 if [ x"$OPTIONS" == "x" ]

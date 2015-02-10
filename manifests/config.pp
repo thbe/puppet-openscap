@@ -8,7 +8,7 @@
 #
 # Requires:     This module has no requirements
 #
-# Sample Usage:
+# Sample Usage: Should not be used standalone
 #
 class openscap::config {
   # openscap configuration

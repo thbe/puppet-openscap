@@ -8,7 +8,7 @@
 #
 # Requires:     This module has no requirements
 #
-# Sample Usage: include openscap::params
+# Sample Usage: Should not be used standalone
 #
 class openscap::params {
   # Operating system specific definitions

@@ -1,19 +1,53 @@
-# Class: openscap
+# == Class: openscap
 #
-# This module manages openscap
+# This is the openscap module. This module install all things
+# required to setup openscap.
 #
-# Parameters:
-#  report
-#  result
-#  definition
-#  rootEmail  = Mail address that get root mails
+# === Parameters
 #
-# Actions:
+# Here is the list of parameters used by this module.
 #
-# Requires: see Modulefile
+# [*report*]
+#   Specify the file and path for the report
+#   Default value is /var/log/oscap-scan.html
 #
-# Sample Usage:
-#  include openscap{ definition=rhel6 }
+# [*result*]
+#   Specify the file and path for the result
+#   Default value is /var/log/oscap-scan.xml
+#
+# [*ovalDefinition*]
+#   Specify the file and path for the oval definition
+#   Default value is /srv/openscap/com.redhat.rhsa-all.xml
+#
+# [*xccdfDefinition*]
+#   Specify the file and path for the xccd definition
+#   Default value is /usr/share/openscap/scap-xccdf.xml
+#
+# [*profile*]
+#   Specify the profile against which the system is checked
+#   Default value is F14-Desktop
+#
+# [*rootEmail*]
+#   Specify the email that recieve the reports (not implemented yet)
+#   Default value is john.doe@example.local
+#
+# === Variables
+#
+# No additonal variables are required for this module
+#
+# === Examples
+#
+#  class { '::openscap':
+#    profile => 'F14-Desktop',
+#  }
+#
+# === Authors
+#
+# Thomas Bendler <project@bendler-net.de>
+#
+# === Copyright
+#
+# Copyright 2015 Thomas Bendler, unless otherwise noted.
 #
 class openscap (
   $report          = $openscap::params::report,

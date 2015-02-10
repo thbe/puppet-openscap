@@ -40,9 +40,10 @@ can use:
 
 ```puppet
 class { '::openscap':
-  rootEmail => 'john.doe@example.local',
+  profile => 'F14-Desktop',
 }
 ```
+
 
 ##Usage
 
@@ -55,6 +56,7 @@ functionality.
 ```puppet
 include '::openscap'
 ```
+
 
 ##Reference
 
@@ -71,39 +73,40 @@ The following parameters are available in the openscap module
 
 ####`report`
 
-Placeholder ...
+Specify the file and path for the report.
 
 ####`result`
 
-Placeholder ...
+Specify the file and path for the result.
 
 ####`ovalDefinition`
 
-Placeholder ...
+Specify the file and path for the oval definition.
 
 ####`xccdfDefinition`
 
-Placeholder ...
+Specify the file and path for the xccd definition.
 
 ####`profile`
 
-Placeholder ...
+Specify the profile against which the system is checked.
 
 ####`rootEmail`
 
-Placeholder ...
+Specify the email that recieve the reports (not implemented yet).
 
 
 ##Limitations
 
-This module has been built on and tested against Puppet 3.2 and higher.
+This module has been built on and tested against Puppet 3.7 and higher.
 
 The module has been tested on:
 
-* RedHat Enterprise Linux 5/6
-* Scientific Linux 5/6
+* RedHat Enterprise Linux 6/7
+* Scientific Linux 6/7
+* CentOS 6/7
 
-Testing on other platforms has been light and cannot be guaranteed. 
+Testing on other platforms has been light and cannot be guaranteed.
 
 
 ##Development

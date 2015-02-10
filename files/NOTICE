@@ -2,3 +2,8 @@ Please download the current oscap files to this directory using:
 
 wget http://www.redhat.com/security/data/oval/com.redhat.rhsa-all.xml
 wget http://www.redhat.com/security/data/metrics/com.redhat.rhsa-all.xccdf.xml
+
+After downloading the the files, the big one need to be compressed to reduce the
+Puppet transfer size:
+
+bzip2 com.redhat.rhsa-all.xml
