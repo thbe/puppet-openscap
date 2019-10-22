@@ -21,6 +21,7 @@ group :test do
   gem 'rspec-puppet'
   gem 'rspec-puppet-facts'
   gem 'rubocop'
+  gem 'rugged'
   gem 'semantic_puppet'
   gem 'simplecov'
   gem 'simplecov-console'
@@ -34,8 +35,18 @@ group :development do
   gem 'travis-lint'
 end
 
-group :system_tests do
-  gem 'beaker', '~> 3.28'
+group :acceptance do
+  gem 'beaker', '~>4.0'
+  gem 'beaker-docker'
+  gem 'beaker-hiera'
+  gem 'beaker-hostgenerator'
+  gem 'beaker-module_install_helper'
+  gem 'beaker-puppet', :git => 'https://github.com/thbe/beaker-puppet.git'
   gem 'beaker-puppet_install_helper'
   gem 'beaker-rspec'
+  gem 'beaker-testmode_switcher'
+end
+
+group :documentation do
+  gem 'github_changelog_generator'
 end
